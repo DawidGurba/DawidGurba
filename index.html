@@ -1,40 +1,49 @@
 <html>
-    <head>
-        </head>
+<head>
+
+    <title>FORMULARZ</title>
+</head>
 <body>
-    
-    
-
-<form action="">
+    <form action="">
 <input type="text" name="pole"/>
-<button type="submit">Pokaz</button>
-</form>
-<div class="wynik">
+<button type="submit">pokaz</button>
+    </form>
+    <div class="wynik"> </div>
+         <script>
+         //odwolujemy sie do formularza(pobieramy obiekt form)
+         const formularz = document.querySelector('form');
+    
+            //pobieramy diva o klasie wynik
+            const wynik = document.querySelector('.wynik');
 
-</div>
-<script>
-//odwolujemy sie do formularza(pobieramy obiekt form)
-const formularz = document.querySelector('form');
-//pobieramy diva o klasie wynik
-const wynik = document.querySelector('.wynik'); 
-//do zdarzenia submit przypisujemy funckje, ktora przegladarka uruchomi w momencie pojawienia sie tego zdarzenia
+        //do zdarzenia submit przypisujemy funkcje, ktora przegladarka uruchomi w momencie pojawienia sie tego zdarzenia
 
-formularz.addEventListener('submit', (e) => {
-    //zatrzynujemy domyslne dzialanie orzegladarki na formularzu
-    e.preventDefault();
-//odwolujemy sie do pola w formularzu
-const polewformularzu = document.querySelector('input [name="pole"]'). value;
+        formularz.addEventListener('submit',(e)=> {
+            //zatrzymujemy domyslne działanie przegladarki na formularzu
+            e.preventDefault();
+            //odwolujemy sie do pola w formalarzu
+            const poleWFormularzu = document.querySelector('input[name="pole"]').value;
+           
+            if(poleWFormularzu % 2==0) {
 
-
-//wyswietlamy w divie wartosc pola
-wynik.textContent = polewformularzu;
-});
-</script>
+           wynik.textContent = 'liczba jest parzysta';
 
 
+            }else  {
 
+           wynik.textContent = 'liczba jest nie parzysta';
+            }
+            //wyswietlamy w divie wartosc pola
+           // wynik.textContent = poleWFormularzu;
+        }); 
+
+
+
+        
+
+
+        </script>
 
     
 </body>
-
 </html>
