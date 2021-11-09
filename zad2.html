@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+
+
+<p>Podaj liczbe</p>
+<form>
+    <input type = "text" name="pole">
+    <button type="submit">potwirdz</button>
+    </form>
+
+    <div class="wynik"></div>
+<script>
+    const formularz = document.querySelector('form');
+
+    const div = document.querySelector('form');
+
+    formularz.addEventListener('submit',(e) => 
+            {
+                e.preventDefault();
+
+                const liczba = document.querySelector('input[name="pole"]').value;
+
+                if(liczba > 5 && liczba != 6 && liczba != 12)
+                {
+                    div.textContent = 'to jest ta liczba';
+                }
+                else if (liczba == 0)
+                {
+                    div.textContent = 'to jest ta liczba';
+                }
+                else 
+                {
+                    div.textContent = 'to nie jest ta liczba';
+                }
+            })
+</script>
+
+
+
+
+
+</body>
+</html>
