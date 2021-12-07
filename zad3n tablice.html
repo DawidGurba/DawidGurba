@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+    <div class ="tablica"></div>
+    <div class = "suma"></div> 
+    <div class = "ileZer"></div>
+    <input type="nubmer" name="liczba"/>
+    <button>ile razy</button>
+    <div class = "ileLiczba"></div>
+<script>
+    function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+    
+const divTablica = document.querySelector(`.tablica`);
+const divSuma = document.querySelector(`.suma`);
+const divileZer = document.querySelector(`.ileZer`);
+const liczby = [];
+let suma = 0;
+let ileZer = 0;
+for(let i = 0; i < 100; i++){
+  //  liczby[i] = Math.round(Math.random()*100); 
+  liczby[i] = getRandomIntIclusive(0,100);
+  suma += liczby[i]; 
+} 
+//ile zer w tablicy kod
+for (const liczba of liczby) {
+    if(liczba ==0) ileZer++;{
+
+    }
+    }
+
+//document.write(liczby.join(`,`));
+divTablica.textContent= liczby.join(`,`);
+divSuma.textContent = `Suma liczb w tablicy wynosi:` +
+ suma;
+ divileZer.textContent = ` Ilośc zer w tablicy:` + ileZer;
+
+    </script>
+
+
+
+</body>
+
+
+
+
+</html>
