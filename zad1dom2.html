@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .naglowek{
+            color:orange;
+        }
+        .div{
+            font-size: 40px;
+            color: blue;
+        }
+        .p1{
+            text-decoration:underline;
+        }
+        .span{
+            font-weight: bold;
+            color: greenyellow;
+        }
+        .zmiana{
+            background-color: black;
+            color: rgb(72, 248, 110);
+            padding: 20pxs;
+        }
+    </style>
+</head>
+<body>
+<h1 class="naglowek">To jest naglowek h1</h1>
+<div class="div">Tresc z diva</div>
+<p class="p1">Tresc z akapitu1</p>    
+<p class="p2">Tresc z akapitu2</p>    
+
+<script>
+    //pobieramy elementy do html
+    const h1 = document.querySelector('.naglowek');
+    const div = document.querySelector('div.div');
+    const akapity = document.querySelectorAll('p'); //pobieramy jednoczesnie wszystkie akapity
+
+    //dodajemy tresc do akapitu p1
+    akapity[0].innerHTML += '<span>Bardzo lubię się uczyć języka JavaScript </span>';
+
+    //zmieniamy trac w naglowku h1
+    h1.textContent = 'JavaScript';
+
+    //zmieniamy typ czcionki dla diva
+    div.style.fontFamily='Courier New';
+
+    // do diva dodajemy klase o nazwie zmiana
+    div.classList.add('zmiana');
+
+    //tworzymy nowy element h2
+    const h2 = document.createElement('h2');
+    //dodajemy zawartosc do h2
+    h2.textContent = 'aplikacje internetowe';
+
+    //utworzony nowy element dodajemy do drugiego akapitu
+    akapity[1].appendChild(h2);
+
+    //usuwamy element h1
+    h1.remove();
+</script>
+
+
+
+
+
+
+</body>
+</html>
