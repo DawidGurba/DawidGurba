@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div>
+    <h2> Wspolrzedna kursora x:</h2>
+    <h2>Wspolrzedna kursora y:</h2>
+    <h2>Nacisnieto klawisz:</h2>
+</div>
+<body>
+    
+    <script>
+        //pobieramy wszystkie h2
+const naglowkiH2 = document.querySelectorAll('h2');
+
+document.addEventListener('mousemove', function(event){
+//wspolrzedna x kursora myszy - event,clientX
+//wspolrzedna y kursora myszy - event,clienty
+
+//zmieniamy zawartosc h2 pierwszego
+naglowkiH2[0].textContent = ' Wspolrzedna kursora x:  $
+(event.clientX)';
+
+naglowkiH2[1].textContent = 'Wspolrzedna kursora y:  $
+(event.clientX)';
+
+});                     
+
+//obsluga klawiatury
+document.addEventListener('keydown', function(event){
+naglowkiH2[2].textContent = 'Nacisnieto klawisz: $(event.key)';
+});
+    </script>
+</body>
+</html>
