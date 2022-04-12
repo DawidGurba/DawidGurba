@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+div{
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    margin-bottom: 10px;
+}
+    </style>
+</head>
+<body>
+    <form action="">
+        <div>
+        <label>Wpisz kolor czerwony:</label>
+        <input type="number" name="red"/>
+    </div>
+    <span class="error"></span>
+    <div>
+        <label>Wpisz kolor niebieski:</label>
+        <input type="number" name="blue"/>
+    </div>
+    <span class="error"></span>
+
+</div>
+<div>
+        <label>Wpisz kolor zielony:</label>
+        <input type="number" name="green"/>
+    </div>
+    <span class="error"></span>
+
+    <input type="submit" value="zmien kolor tła"/>
+    </form>
+
+    <script>
+        //pobieramy  formularz
+const formularz = document.querySelectorAll('form');
+//pobieramy elementy formularza
+const czerwony = document.querySelector('input[name="red"]');
+const niebieski = document.querySelector('input[name="niebieski"]');
+const zielony = document.querySelector('input[name="zielony"]');
+//pobieramy elementy, w ktorych bedziemy umieszczac info o bledach
+const bledy = document.querySelectorAll('span.error');
+
+//obsługujemy zdarzenie submit (potwierdzenie wysyłania) formularza
+
+formularz.addEventListener('submit', function (e){
+//po kliknieciu
+
+    //po wcisnieciu submit wykona sie powyzszy kod
+
+    //pobieramy wartosci pól pisane przez użytkownika
+    const red = czerwony.value;
+    const blue = niebieski.value;
+    const green = zielony.value;
+    //czyszczenie zawartosci elementow span
+    bledy.forEach(blad=>{
+blad.textContent = '';
+    });
+    //walidacja pól
+    if(red<0 || red>255){
+        bledy[0].textContent = 'wpisana liczba musi zawierac sie w przedziale 0-255';
+        return false;
+    }
+    if(blue<0 || blue>255){
+        bledy[1].textContent = 'wpisana liczba musi zawierac sie w przedziale 0-255';
+        return false;
+    }
+    if(green<0 || green>255){
+        bledy[2].textContent = 'wpisana liczba musi zawierac sie w przedziale 0-255';
+        return false;
+    }
+
+    //zmieniamy kolor tła na podany kolor
+    //odwołujemy się do znacznika body
+    document.body.style.backgroundColor = `rgb(${red}, ${blue},${green})`;
+});
+
+        </script>
+</body>
+</html>
