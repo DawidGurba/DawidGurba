@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    window.addEventListener("load", odliczanie);
+function odliczanie()
+{
+	var dzisiaj = new Date();
+
+	var dzien = dzisiaj.getDate();
+	var miesiac = dzisiaj.getMonth()+1;
+	var rok = dzisiaj.getFullYear();
+
+	var godzina = dzisiaj.getHours();
+	if (godzina<10) godzina = "0"+godzina;
+
+	var minuta = dzisiaj.getMinutes();
+	if (minuta<10) minuta = "0"+minuta;
+
+	var sekunda = dzisiaj.getSeconds();
+	if (sekunda<10) sekunda = "0"+sekunda;
+
+	document.title = dzien+"/"+miesiac+"/"+rok+" | "+godzina+":"+minuta+":"+sekunda;
+
+	 setTimeout("odliczanie()",1000);
+}
+</script>
+</body>
+</html>
