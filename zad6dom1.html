@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <script type ="text/javascript">
+        
+        var agent = navigator.userAgent.toLowerCase();
+        var nazwa = "nieznane";
+        if(agent.indexOf('firefox') != -1){
+            nazwa = " Firefox";
+        }
+        if(agent.indexOf('opera') != -1){
+            nazwa = "Opera";
+        }
+       else if(agent.indexOf('konqueror') != -1){
+            nazwa = " Konqueror";
+        }
+        else if(agent.indexOf('netscape') != -1){
+            nazwa = " Netscape Navigator";
+        }
+        else if(agent.indexOf('msie') != -1){
+            nazwa = " Internet Explorer";
+        }
+    </script>
+<body>
+    <script>
+        document.write("Twoja przeglądarka to:  " +nazwa);
+    </script>
+    
+</body>
+</html>
