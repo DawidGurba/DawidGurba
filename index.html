@@ -1,49 +1,43 @@
-<html>
+<!DOCTYPE html>
+<html lang="pl">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>na lekcji</title>
 
-    <title>FORMULARZ</title>
+    <style>
+      .klasa {
+         
+background-color: rgb(255, 0, 0);
+width:50%;
+margin:auto;
+      }
+      .klas {
+          background-color: #0000FF;
+          height: 20%;
+          margin-top: 100px;
+
+      }
+      body{
+          color: white;
+          font-family: Arial;
+      }
+      #p1{
+font-size: 1.5rem;
+      }
+      #p2{
+font-size: 2rem;
+      }
+      
+    </style>
 </head>
 <body>
-    <form action="">
-<input type="text" name="pole"/>
-<button type="submit">pokaz</button>
-    </form>
-    <div class="wynik"> </div>
-         <script>
-         //odwolujemy sie do formularza(pobieramy obiekt form)
-         const formularz = document.querySelector('form');
-    
-            //pobieramy diva o klasie wynik
-            const wynik = document.querySelector('.wynik');
+    <div class="klasa">
+<p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus molestiae ratione explicabo error aut esse aperiam corporis et praesentium eveniet, fugiat, unde ullam quo voluptates eligendi. Totam non quibusdam nisi!</p>
+    </div>
 
-        //do zdarzenia submit przypisujemy funkcje, ktora przegladarka uruchomi w momencie pojawienia sie tego zdarzenia
-
-        formularz.addEventListener('submit',(e)=> {
-            //zatrzymujemy domyslne działanie przegladarki na formularzu
-            e.preventDefault();
-            //odwolujemy sie do pola w formalarzu
-            const poleWFormularzu = document.querySelector('input[name="pole"]').value;
-           
-            if(poleWFormularzu % 2==0) {
-
-           wynik.textContent = 'liczba jest parzysta';
-
-
-            }else  {
-
-           wynik.textContent = 'liczba jest nie parzysta';
-            }
-            //wyswietlamy w divie wartosc pola
-           // wynik.textContent = poleWFormularzu;
-        }); 
-
-
-
-        
-
-
-        </script>
-
-    
+    <div class="klas">
+<p id="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora dolore adipisci, facilis necessitatibus rerum voluptatem soluta dolor aspernatur, mollitia explicabo culpa cum totam quisquam? Quasi accusantium esse nobis culpa quo.</p>
+    </div>
 </body>
 </html>
