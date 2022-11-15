@@ -1,55 +1,67 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serwis</title>
     <style>
-        .body{
-            font-family:arial;
-            background-color:yellow;
+        body{
+            font-family: arial;
+            background-color: cornsilk;
         }
-        .form{
-            display:flex;
-            justify-content:center;
-            align-items:center;
-flex-wrap:wrap;
-flex-direction:column;
+
+        .formik{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-       .form input{
-display:flex;
-margin:20px;
+
+        .formik input{
+            display: block;
+            margin: 20px;
         }
-       .form p{
-            flex-basis: 100%;
-            text-align:center;
+
+        .formik p,
+        .formik .error{
+            flex-basis: 30%;
+            text-align: center;
         }
-.form error{
-color:crimson;
-border:
-padding:20px 20px;
-}
+        .formik a{
+            text-decoration: none;
+            color: brown;
+        }
+
+        .formik .error{
+            color: black;
+            border: 1px solid black;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
-    <h2>Witaj, zaloguj się do serwisu</h2>
-    <div>
-        <form action="logowanie.php" method="POST">
-            <input type="text" name="login" placeholder="login">
-            <input type="password" name="haslo" placeholder="hasło">
-            <input type="button" value="">
-            <?php 
-            echo($_SESSION['error']);?>
-            <div class="error">
-unset($_SESSION['error']);
-            </div>
+    <h2>Witaj, zaloguj sie do serwisu!</h2>
+    <div class="formik">
+        <form action="logowanie.php" method="post">
+            <input type="text" name="login" placeholder="Login">
+            <input type="text" name="haslo" placeholder="haslo">
+            <input type="submit" value="zaloguj sie" name="loguj">
         </form>
-<?php endif; ?>
-       
-    <p>Nie masz konta? <a href="Rejestracja">Utwórz konto</a></p>
+        <?php
+        if(isset($_SESSION['error'])): ?>
+        <div class="error">
+        <?php echo $_SESSION['error'];
+        unset($_SESSION['error']);
+        ?>
+        </div>
+        <?php endif; ?>
+        <!--<div class="error"></div>-->
+        <p>Nie masz konta? <a href="rejestracja.php">Utwórz konto.</a></p>
     </div>
-
-
 </body>
 </html>
