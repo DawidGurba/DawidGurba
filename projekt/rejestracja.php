@@ -117,6 +117,72 @@ header('Location: witamy.php');
     margin-top:10px;
     margin-bottom:10px;
 }
+body{
+            font-family: tahoma;
+            background-color: #f0ef00  ;
+            color: black;
+        }
+
+        form>input{
+            display: block;
+            margin: 20px;
+        }
+
+       
+
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .log_inp{
+        height: 80px;
+        border: 3px solid white;
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 1.6rem;
+        font-weight: 300;
+        padding: 0 30px;
+        margin-top: 10px;
+        transition: 0.5s;
+        width: 350px;
+        color: white;
+        text-transform: uppercase;
+        }
+
+        .log_inp a{
+            text-decoration: none;
+            color: white;
+        }
+
+       
+
+        .log_inp{
+        height: 50px;
+        border: 3px solid white;
+        font-size: 1.6rem;
+        font-weight: 300;
+        padding: 0 30px;
+        margin-bottom: 5px;
+        transition: 0.5s;
+        width: 350px;
+        }
+
+        .log_inp:hover{
+            background-color: white;
+        color: black;
+        }
+
+        h2{
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 3rem;
+            color: black;
+        }
+
+    </style>
         </style>
    
 </head>
@@ -124,7 +190,7 @@ header('Location: witamy.php');
 
 <h2>Wpisz dane do rejestracji.</h2>
     <form method="POST" action="rejestracja.php" >
-    Nazwa użytkownika: <br> <input type="text" name="nick" class="log_inp" placeholder="nick"/></br>
+   Nazwa użytkownika: <br> <input type="text" name="nick" class="log_inp" placeholder="nick"/></br>
     <?php
 if(isset($_SESSION['e_nick'])){
     echo '<div class="error">'.$_SESSION['e_nick'].'</div>';
